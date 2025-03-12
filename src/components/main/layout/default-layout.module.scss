@@ -1,0 +1,16 @@
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 100vh;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__wrapper {
+    width: 1000px;
+  }
+}

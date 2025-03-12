@@ -1,0 +1,28 @@
+@import './scss/fonts.scss';
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  background-image: url("@/assets/images/background.jpg");
+  background-attachment: fixed;
+  color: var(--white);
+  font-family: 'JetBrains Mono', 'Courier';
+}
