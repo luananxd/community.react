@@ -1,22 +1,19 @@
 import style from './default-layout.module.scss'
-// Types
-import { JSX } from 'react'
 // Components
-import AppHeader from "../header/AppHeader"
+import AppHeader from '../header/AppHeader'
+import AppFooter from '../footer/AppFooter'
+import { Outlet } from 'react-router'
 
-interface Props {
-  content: () => JSX.Element
-}
-
-export default function DefaultLayout({ content }: Props) {
+export default function DefaultLayout() {
   return (
     <div className={style['default-layout']}>
-      <AppHeader></AppHeader>
+      <AppHeader />
       <main className={style['default-layout__content']}>
         <div className={style['default-layout__wrapper']}>
-          { content() }
+          <Outlet />
         </div>
       </main>
+      <AppFooter />
     </div>
   )
 }

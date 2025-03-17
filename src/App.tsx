@@ -1,9 +1,7 @@
-import MainPage from "./pages/main/MainPage"
+import IndexRoutes from './routes/IndexRoutes.tsx'
 
 function App() {
-  return (
-    <MainPage></MainPage>
-  )
+  return <IndexRoutes />
 }
 
 export default App

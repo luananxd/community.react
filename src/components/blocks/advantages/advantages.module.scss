@@ -1,0 +1,15 @@
+.advantage {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__text {
+    width: 500px;
+  }
+
+  &__image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+  }
+}

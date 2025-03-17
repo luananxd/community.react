@@ -1,8 +1,12 @@
+@import './animations.css';
 @import './scss/fonts.scss';
 
 :root {
   --black: #000000;
   --white: #ffffff;
+  --blue: #0f3a97;
+
+  --cover-gradient: linear-gradient(#00000000 80%, #000000 95%);
 }
 
 .visually-hidden {
@@ -21,7 +25,7 @@
 body {
   margin: 0;
   background-color: var(--black);
-  background-image: url("@/assets/images/background.jpg");
+  background-image: url('@/assets/images/background.jpg');
   background-attachment: fixed;
   color: var(--white);
   font-family: 'JetBrains Mono', 'Courier';
