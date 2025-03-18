@@ -16,7 +16,7 @@ export default function IndexRoutes() {
           ></Route>
 
           <Route
-            path="/mars"
+            path="/mars-exploration"
             element={<MarsExplorationPage />}
           ></Route>
 

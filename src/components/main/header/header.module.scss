@@ -15,4 +15,13 @@
     display: flex;
     gap: 40px;
   }
+
+  &__link {
+    color: var(--white);
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
 }

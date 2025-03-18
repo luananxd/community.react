@@ -1,4 +1,4 @@
-import IndexRoutes from './routes/IndexRoutes.tsx'
+import IndexRoutes from './routes/IndexRoutes'
 
 function App() {
   return <IndexRoutes />
