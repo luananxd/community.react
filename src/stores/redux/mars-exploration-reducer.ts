@@ -30,6 +30,17 @@ const initialState: MarsExplorationState = {
   roverPhotos: [],
 }
 
+// Selectors
+
+export const selectWeatherFilter = (state: any) =>
+  state.marsExploration.filterWeather
+
+export const selectPhotosFilter = (state: any) =>
+  state.marsExploration.filterPhotos
+
+export const selectRoverPhotos = (state: any) =>
+  state.marsExploration.roverPhotos
+
 // Actions
 
 export const updateWeatherFilter = (value: MarsWeatherFilter) => {
@@ -53,13 +64,12 @@ export const updateRoverPhotos = (value: MarsRoverPhoto[]) => {
   }
 }
 
-export const fetchRoverPhotos = () => {
-  return async (dispatch: RootDispatch, getState: any) => {
-    const filter = getState().marsExploration?.filterPhotos
+export const fetchRoverPhotos = (params: any) => {
+  return async (dispatch: RootDispatch) => {
     const { data } = await get<MarsRoverPhoto[]>(
       'mars-photos/api/v1/rovers/curiosity/photos',
       {
-        params: filter,
+        params,
       },
     )
     dispatch(updateRoverPhotos(data))

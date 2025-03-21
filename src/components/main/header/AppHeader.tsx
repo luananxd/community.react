@@ -1,6 +1,6 @@
 import style from './header.module.scss'
 import { NavLink, Link } from 'react-router'
-import { getPath } from '@/routes/routes-utils'
+import { getPath } from '@/hooks/use-route'
 
 export default function AppHeader() {
   const items = [
@@ -37,9 +37,10 @@ export default function AppHeader() {
           {items.map(item => (
             <NavLink
               to={getPath(item.link)}
+              key={item.title}
               className={style['app-header__link']}
             >
-              <span key={item.title}>{item.title}</span>
+              <span>{item.title}</span>
             </NavLink>
           ))}
         </nav>

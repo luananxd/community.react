@@ -1,17 +1,26 @@
 import { useEffect } from 'react'
-import Button from '@/components/ui/button/Button'
-import store from '@/stores/redux/store'
-import { fetchRoverPhotos } from '@/stores/redux/mars-exploration-reducer'
+import { useSelector, useDispatch } from 'react-redux'
+// Store
+import {
+  selectWeatherFilter,
+  selectPhotosFilter,
+  selectRoverPhotos,
+  fetchRoverPhotos,
+} from '@/stores/redux-toolkit/mars-exploration-reducer'
 
 export default function MarsExplorationPage() {
+  const dispatch = useDispatch()
+  const weatherFilter = useSelector(selectWeatherFilter)
+  const photosFilter = useSelector(selectPhotosFilter)
+  const roverPhotos = useSelector(selectRoverPhotos)
+
   useEffect(() => {
-    store.dispatch(fetchRoverPhotos())
-  })
+    dispatch(fetchRoverPhotos(photosFilter) as any)
+  }, [dispatch, photosFilter])
 
   return (
     <>
       <div>Hello from Mars!</div>
-      <Button label="Fetch Data"></Button>
     </>
   )
 }
