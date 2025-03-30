@@ -1,4 +1,4 @@
-type MarsCamera = 'FHAZ' | 'RHAZ' | 'MAST' | 'CHEMCAM' | 'MAHLI'
+export type MarsCamera = 'FHAZ' | 'RHAZ' | 'MAST' | 'CHEMCAM' | 'MAHLI'
 
 export interface MarsWeatherFilter {
   version: '1.0'
@@ -31,4 +31,37 @@ export interface MarsRoverPhoto {
     launchDate: string
     status: string
   }
+}
+
+export interface MarsSolInfo {
+  at: {
+    av: number
+    ct: number
+    mn: number
+    mx: number
+  }
+  hws: {
+    av: number
+    ct: number
+    mn: number
+    mx: number
+  }
+  pre: {
+    av: number
+    ct: number
+    mn: number
+    mx: number
+  }
+  monthOrdinal: string
+  season: string
+  northernSeason: string
+  southernSeason: string
+  firstUtc: string
+  lastUtc: string
+  sol?: number
+}
+
+export interface MarsWeather {
+  [key: number]: MarsSolInfo
+  solKeys: string[]
 }

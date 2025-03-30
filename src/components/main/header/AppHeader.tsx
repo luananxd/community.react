@@ -1,6 +1,8 @@
 import style from './header.module.scss'
-import { NavLink, Link } from 'react-router'
+// Hooks
 import { getPath } from '@/hooks/use-route'
+// Components
+import { NavLink, Link } from 'react-router'
 
 export default function AppHeader() {
   const items = [

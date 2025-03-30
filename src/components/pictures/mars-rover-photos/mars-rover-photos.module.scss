@@ -1,0 +1,26 @@
+.mars-rover-photos {
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__tab {
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    cursor: pointer;
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

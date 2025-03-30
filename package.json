@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tools": "react-devtools"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
@@ -16,6 +17,7 @@
     "@types/redux": "^3.6.0",
     "axios": "^1.8.3",
     "axios-case-converter": "^1.1.1",
+    "classnames": "^2.5.1",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

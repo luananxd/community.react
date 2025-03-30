@@ -1,5 +1,6 @@
 @import './animations.css';
 @import './scss/fonts.scss';
+@import './scss/global.scss';
 
 :root {
   --black: #000000;
@@ -7,6 +8,12 @@
   --blue: #0f3a97;
 
   --cover-gradient: linear-gradient(#00000000 80%, #000000 95%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .visually-hidden {

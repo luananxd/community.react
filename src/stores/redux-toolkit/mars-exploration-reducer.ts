@@ -6,6 +6,7 @@ import type {
   MarsWeatherFilter,
   MarsPhotosFilter,
   MarsRoverPhoto,
+  MarsWeather,
 } from '@/types/mars-exploration'
 // Utils
 import { get } from '@/utils/requests'
@@ -14,6 +15,7 @@ interface MarsExplorationState {
   filterWeather: MarsWeatherFilter
   filterPhotos: MarsPhotosFilter
   roverPhotos: MarsRoverPhoto[]
+  marsWeather: MarsWeather | null
 }
 
 const initialState: MarsExplorationState = {
@@ -29,6 +31,7 @@ const initialState: MarsExplorationState = {
     apiKey: import.meta.env.VITE_NASA_API_KEY as string,
   },
   roverPhotos: [],
+  marsWeather: null,
 }
 
 // Selectors
@@ -42,15 +45,28 @@ export const selectPhotosFilter = (state: RootState) =>
 export const selectRoverPhotos = (state: RootState) =>
   state.marsExploration.roverPhotos
 
+export const selectMarsWeather = (state: RootState) =>
+  state.marsExploration.marsWeather
+
 // Actions
 
 export const fetchRoverPhotos = createAsyncThunk(
   'mars-exploration/fetchRoverPhotos',
   async (params: MarsPhotosFilter) => {
-    const { data } = await get<MarsRoverPhoto[]>(
+    const { data } = await get<{ photos: MarsRoverPhoto[] }>(
       'mars-photos/api/v1/rovers/curiosity/photos',
       { params },
     )
+    return data.photos
+  },
+)
+
+export const fetchMarsWeather = createAsyncThunk(
+  'mars-exploration/fetchMarsWeather',
+  async (params: MarsWeatherFilter) => {
+    const { data } = await get<MarsWeather>('insight_weather/', {
+      params,
+    })
     return data
   },
 )
@@ -69,12 +85,19 @@ const marsExplorationReducer = createSlice({
     },
   },
   extraReducers: builder => {
-    builder.addCase(
-      fetchRoverPhotos.fulfilled,
-      (state, action: PayloadAction<MarsRoverPhoto[]>) => {
-        state.roverPhotos = [...state.roverPhotos, ...action.payload]
-      },
-    )
+    builder
+      .addCase(
+        fetchRoverPhotos.fulfilled,
+        (state, action: PayloadAction<MarsRoverPhoto[]>) => {
+          state.roverPhotos = action.payload
+        },
+      )
+      .addCase(
+        fetchMarsWeather.fulfilled,
+        (state, action: PayloadAction<MarsWeather>) => {
+          state.marsWeather = action.payload
+        },
+      )
   },
 })
 

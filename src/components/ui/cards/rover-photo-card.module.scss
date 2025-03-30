@@ -1,0 +1,30 @@
+.rover-photo-card {
+  background-color: rgba(255, 255, 255, 0.2);
+
+  &__image {
+    display: block;
+    width: 320px;
+    height: 320px;
+  }
+
+  &__wrapper {
+    padding: 15px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 0 24px 0;
+  }
+
+  &__row {
+    display: flex;
+    gap: 10px;
+
+    & dd {
+      margin: 0;
+    }
+  }
+}
