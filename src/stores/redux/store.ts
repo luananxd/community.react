@@ -5,11 +5,13 @@ import { thunk } from 'redux-thunk'
 import counterReducer from './counter-reducer'
 import marsExplorationReducer from './mars-exploration-reducer'
 import pictureOfTheDayReducer from './picture-of-the-day-reducer'
+import technologiesReducer from './technologies-reducer'
 
 const rootReducer = combineReducers({
   counter: counterReducer,
   marsExploration: marsExplorationReducer,
   pictureOfTheDay: pictureOfTheDayReducer,
+  technologies: technologiesReducer,
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))

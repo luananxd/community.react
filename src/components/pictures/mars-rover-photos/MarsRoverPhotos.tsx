@@ -13,7 +13,7 @@ import {
   fetchRoverPhotos,
 } from '@/stores/redux-toolkit/mars-exploration-reducer'
 // Components
-import RoverPhotoCard from '@/components/ui/cards/RoverPhotoCard'
+import RoverPhotoCard from '@/components/ui/cards/rover-photo-card/RoverPhotoCard'
 
 export default function MarsRoverPhotos() {
   const dispatch = useDispatch()

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 // Types
 import type { MarsRoverPhoto } from '@/types/mars-exploration'
 // Components
-import Button from '../button/Button'
+import Button from '@/components/ui/button/Button'
 
 interface Props {
   photo: MarsRoverPhoto

@@ -1,4 +1,4 @@
-import Counter from '@/components/Counter'
+import Counter from '@/components/blocks/counter/Counter'
 
 export default function CounterPage() {
   return <Counter />

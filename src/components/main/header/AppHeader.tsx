@@ -11,12 +11,8 @@ export default function AppHeader() {
       link: 'mars',
     },
     {
-      title: 'Photo & Video Library',
-      link: 'counter',
-    },
-    {
       title: 'Technologies',
-      link: 'counter',
+      link: 'technologies',
     },
     {
       title: 'Contacts',

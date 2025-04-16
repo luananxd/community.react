@@ -10,7 +10,7 @@ import {
   fetchMarsWeather,
 } from '@/stores/redux-toolkit/mars-exploration-reducer'
 // Components
-import MarsWeatherCard from '@/components/ui/cards/MarsWeatherCard'
+import MarsWeatherCard from '@/components/ui/cards/mars-weather-card/MarsWeatherCard'
 
 export default function MarsWeather() {
   const dispatch = useDispatch()

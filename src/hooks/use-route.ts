@@ -43,26 +43,17 @@ const data: Data = {
       title: 'NASA - Mars Exploration',
     },
   },
+  'technologies': {
+    path: '/technologies',
+    meta: {
+      title: 'NASA - Technologies',
+    },
+  },
   'counter': {
     path: '/counter',
     meta: {
       title: 'NASA - Counter',
     },
-  },
-  'path': {
-    path: '/path',
-  },
-  'path.foo': {
-    path: '/path/foo',
-  },
-  'path.foo.edit': {
-    path: '/path/foo/:id',
-  },
-  'bar': {
-    path: '/path/foo/:id/bar',
-  },
-  'bar.edit': {
-    path: '/path/foo/:id/bar/:uuid',
   },
 }
 

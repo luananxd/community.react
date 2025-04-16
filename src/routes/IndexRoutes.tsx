@@ -4,6 +4,7 @@ import DefaultLayout from '@/components/main/layout/DefaultLayout'
 // Pages
 import MainPage from '@/pages/MainPage'
 import MarsExplorationPage from '@/pages/MarsExplorationPage'
+import TechnologiesPage from '@/pages/TechnologiesPage'
 import CounterPage from '@/pages/CounterPage'
 
 export default function IndexRoutes() {
@@ -19,6 +20,11 @@ export default function IndexRoutes() {
           <Route
             path="/mars-exploration"
             element={<MarsExplorationPage />}
+          ></Route>
+
+          <Route
+            path="/technologies"
+            element={<TechnologiesPage />}
           ></Route>
 
           <Route

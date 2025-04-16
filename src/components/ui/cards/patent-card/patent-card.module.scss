@@ -1,0 +1,13 @@
+.patent-card {
+  padding: 20px;
+  background-color: rgb(96, 96, 96);
+  border-radius: 6px;
+
+  &__title {
+    margin: 0 0 20px 0;
+  }
+
+  &__description {
+    margin: 0 0 20px 0;
+  }
+}
